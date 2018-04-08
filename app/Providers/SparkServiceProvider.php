@@ -63,4 +63,15 @@ class SparkServiceProvider extends ServiceProvider
                 'First', 'Second', 'Third'
             ]);
     }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        Spark::useUserModel('App\Models\User');
+        Spark::useTeamModel('App\Models\Team');
+    }
 }
