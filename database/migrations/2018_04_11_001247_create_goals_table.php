@@ -18,7 +18,7 @@ class CreateGoalsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->integer('target')->unsigned()->default(0);
+            $table->integer('target')->unsigned()->default(1);
             $table->string('operator', 2)->default('==');
             $table->timestamps();
         });
