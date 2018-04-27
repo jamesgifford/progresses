@@ -12,11 +12,13 @@
         <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
-
         <testsuite name="Unit">
             <directory suffix="Test.php">./tests/Unit</directory>
         </testsuite>
     </testsuites>
+    <listeners>
+        <listener class="Tests\Listeners\DatabasePreparationListener" file="./tests/Listeners/DatabasePreparationListener.php"></listener>
+    </listeners>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./app</directory>

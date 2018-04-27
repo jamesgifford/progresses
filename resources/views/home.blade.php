@@ -17,4 +17,6 @@
         </div>
     </div>
 </home>
+<goal-create></goal-create>
+<goal-list></goal-list>
 @endsection

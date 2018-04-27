@@ -18,6 +18,9 @@ require('spark-bootstrap');
 
 require('./components/bootstrap');
 
+Vue.component('goal-list', require('./components/goals/GoalList.vue'));
+Vue.component('goal-create', require('./components/goals/GoalCreate.vue'));
+
 var app = new Vue({
     mixins: [require('spark')]
 });
