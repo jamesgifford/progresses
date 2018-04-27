@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Crypt;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller

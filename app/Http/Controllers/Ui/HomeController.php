@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Ui;
 
+use App\Http\Controllers\Controller;
+use App\Models\Goal;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,8 +25,15 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function show()
+    public function index()
     {
         return view('home');
+    }
+
+    public function show(Goal $goal)
+    {
+        return view('goal')->with([
+            'goal' => $goal
+        ]);
     }
 }

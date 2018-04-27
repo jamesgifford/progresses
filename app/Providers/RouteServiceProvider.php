@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Helpers\HashHelper;
+use App\Models\Goal;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -23,9 +26,14 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+
+        /**
+         * Route model binding for Goal
+         */
+        Route::bind('goal', function ($value) {
+            return Goal::findOrFail(HashHelper::decodeKey($value)) ?? abort(404);
+        });
     }
 
     /**

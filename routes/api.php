@@ -14,5 +14,7 @@
 Route::group([
     'middleware' => 'auth:api'
 ], function () {
-    //
+    Route::apiResources([
+        'goals' => 'Api\GoalController'
+    ]);
 });

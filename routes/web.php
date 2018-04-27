@@ -13,4 +13,5 @@
 
 Route::get('/', 'WelcomeController@show');
 
-Route::get('/home', 'HomeController@show');
+Route::get('/home', 'Ui\HomeController@index');
+Route::get('/home/goal/{goal}', 'Ui\HomeController@show');
